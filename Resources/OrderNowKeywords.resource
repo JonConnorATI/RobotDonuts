@@ -114,8 +114,12 @@ Select 12 different donuts
 
 
 Add some candles
-    Wait For Element To Be Visible    (//h4[text() ="Add Candles"])[1]
+    Wait For Element To Be Visible  (//h4[text() ="Add Candles"])[1]
     Click  (//h4[text() ="Add Candles"])[1]
+
+Add some luxury candles
+    Wait For Element To Be Visible  (//h4[text() ="Add Candles"])[last()]
+    Click  (//h4[text() ="Add Candles"])[last()]
 
 Add a message to a donut
     [Arguments]  ${text}
@@ -123,34 +127,41 @@ Add a message to a donut
     Click    (//h4[text() ="Add Message To A Donut:"])[1]
     Fill Text    //div[@class="selected"]//input[@placeholder="3 words maximum"]   ${text}
 
+Add a luxury message to a donut
+    [Arguments]  ${text}
+    Wait For Elements State    (//h4[text() ='Add Message To A Donut:'])[last()]  enabled
+    Click    (//h4[text() ="Add Message To A Donut:"])[last()]
+    Fill Text    (//div[@data-extra-type='pipped_name']//input[@type='text'])[last()]   ${text}
+
 Select Auto Fill the box
     Click  (//a[@class='box_autofill'])[1]
 
 Add a card
-    Click  (//h4[text() ='Add A Card:'])[1]
+    Click  (//h4[text() ='Add A Card:'])[last()]
 
 Add a greeting
     [Arguments]  ${text}
-    Fill Text    (//div[@class='customise']//textarea)[1]   ${text}
+    Fill Text    (//div[@class='customise']//textarea)[last()]   ${text}
 
 Add an occasion
-    Click    (//label[contains(text(),'Happy Birthday')])[1]
+    Click    (//label[contains(text(),'Happy Birthday')])[last()]
 
 Add a pink bow
-    Click    (//h4[text() ='Add A Bow:'])[1]
-    Click    (//label[contains(text(),'Pink')])[1]
+    Click    (//h4[text() ='Add A Bow:'])[last()]
+    Click    (//label[contains(text(),'Pink')])[last()]
 
 
 
 
 Verify Cart contains the items I have ordered for the birthday scenario
-    Get Text    //h1[@class='entry-title']  ==  my cart (5 items)
+    Get Text    //h1[@class='entry-title']  ==  my cart (6 items)
     Get Text    (//td[@class='product-name']/a)[1]  ==  Birthday Double Dozen
-    Get Text    (//td[@class='product-name']/a)[2]  ==  Candles
-    Get Text    (//td[@class='product-name']/a)[3]  ==  Card
-    Get Text    (//td[@class='product-name']/a)[4]  ==  Bow
-    Get Text    (//td[@class='product-name']/a)[5]  ==  Piped name
-    Get Element Count    ${Remove_Button}  ==  5
+    Get Text    (//td[@class='product-name']/a)[2]  *=  Candles
+    Get Text    (//td[@class='product-name']/a)[3]  *=  Card
+    Get Text    (//td[@class='product-name']/a)[4]  *=  Bow
+    Get Text    (//td[@class='product-name']/a)[5]  *=  Piped name
+    Get Element Count  //a[text()="Birthday Double Dozen"]//parent::td[@data-title="Product"]${Remove_Button}  ==  1
+    Get Element Count  //a[text()="Candles"]//parent::td[@data-title="Product"]${Remove_Button}  ==  1
 
 
 

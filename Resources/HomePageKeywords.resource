@@ -16,7 +16,8 @@ Accept the cookies
     ${is_Present} =  Does Element Exist    ${coupon}
     Run Keyword If    ${is_Present} == True
     ...    Click   ${no_thanks_btn}
-    Click    ${cookies}
+    Click   ${cookies}
+
 
 Close my browsers
      Close Browser  ALL

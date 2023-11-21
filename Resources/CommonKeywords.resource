@@ -19,6 +19,7 @@ Does Element Exist
    ${isExists} =  Set variable if  ${count} == 1  ${True}  ${False}
    [Return]  ${isExists}
 
+
 Element Should Exist
    [Arguments]  ${Element Locator}
    ${isExist}  Does Element Exist  ${Element Locator}

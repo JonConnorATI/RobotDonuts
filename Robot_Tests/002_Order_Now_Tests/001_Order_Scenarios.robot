@@ -51,12 +51,12 @@ Customer is celebrating a birthday
     Go to fill your boxes section
     Select Auto Fill the box
     Go to add some magic section
-    Add some candles
+    Add some luxury candles
     Add a card
     Add a greeting  All the best on your special day
     Add an occasion
     Add a pink bow
-    Add a message to a donut  Just For You
+    Add a luxury message to a donut  Just For You
     Get the total on the Order Now Page
     Select Add to Cart
     Verify Cart pop up information is as Expected
@@ -64,5 +64,6 @@ Customer is celebrating a birthday
     Verify Cart contains the items I have ordered for the birthday scenario
     Get the total in the Cart
     Verify the total on the Order Now Page is the same as the Cart
+
 
 

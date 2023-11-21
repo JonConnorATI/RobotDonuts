@@ -8,5 +8,6 @@ Open the Browser and navigate to the homepage
     [Documentation]    Opens the browser and navigates to the homepage
     [Tags]
     Open the browser and go to the homepage
+    Reload
     Accept the cookies
 
