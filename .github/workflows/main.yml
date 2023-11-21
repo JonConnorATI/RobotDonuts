@@ -1,0 +1,58 @@
+name: robot donuts
+
+on:
+     workflow_dispatch:
+     schedule:
+       - cron: "01 01 * * 1,2,3,4,5"
+
+jobs:
+  run-tests-on-chromium:
+    runs-on: windows-2022
+    env:
+      browser: 'chromium'
+      environment: 'RobotDonuts'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Install Packages
+        run: pip install -r requirements.txt
+      - name: Run rfbrowser init
+        run: rfbrowser init
+      - name: Run Tests
+        run:  robot --argumentfile .\ArgumentFiles\chromium.robot
+      - name: Upload Test Reports
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+         name: chrome-tests
+         path: reports/offBeatTestt*
+      - name: Download all workflow run artifacts
+        if: always()
+        uses: actions/download-artifact@v3
+
+
+  run-tests-on-firefox:
+    runs-on: windows-2022
+    needs: run-tests-on-chromium
+    if: always()
+    env:
+      browser: 'firefox'
+      environment: 'RobotDonuts'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Install Packages
+        run: pip install -r requirements.txt
+      - name: Run rfbrowser init
+        run: rfbrowser init
+      - name: Run Tests
+        run: robot --argumentfile .\ArgumentFiles\firefox.robot
+      - name: Upload Test Reports
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: firefox-tests
+          path: reports/offBeatTest*
+      - name: Download all workflow run artifacts
+        if: always()
+        uses: actions/download-artifact@v3
