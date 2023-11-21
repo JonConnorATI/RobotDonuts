@@ -10,7 +10,7 @@ Variables  ../PageObjects/locators-Cart.py
 Library  String
 Library  Collections
 Library  DateTime
-Library  Browser  auto_closing_level=MANUAL
+Library  Browser  # auto_closing_level=MANUAL
 Library  OperatingSystem
 
 Resource  CommonKeywords.resource
