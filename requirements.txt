@@ -1,5 +1,5 @@
 # Automation test requirements
-robotframework==6.0.2
-robotframework-browser==16.0.1
+robotframework
+robotframework-browser
 pycountry~=22.1.10
 # rpaframework
