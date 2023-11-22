@@ -10,7 +10,7 @@ jobs:
     runs-on: windows-2022
     env:
       browser: 'chromium'
-      environment: 'RobotDonuts'
+      environment: 'user01'
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -37,7 +37,7 @@ jobs:
     if: always()
     env:
       browser: 'firefox'
-      environment: 'RobotDonuts'
+      environment: 'user01'
     steps:
       - name: Checkout
         uses: actions/checkout@v1
