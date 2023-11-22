@@ -48,7 +48,7 @@ jobs:
       - name: Run Tests
         run: robot --argumentfile .\ArgumentFiles\firefox.robot
       - name: Upload Test Reports
-       if: always()
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: firefox-tests
