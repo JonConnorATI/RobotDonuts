@@ -22,13 +22,13 @@ jobs:
         run:  robot --argumentfile .\ArgumentFiles\chromium.robot
       - name: Upload Test Reports
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
          name: chrome-tests
          path: reports/offBeatTest*
       - name: Download all workflow run artifacts
         if: always()
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
 
 
   run-tests-on-firefox:
@@ -49,10 +49,10 @@ jobs:
         run: robot --argumentfile .\ArgumentFiles\firefox.robot
       - name: Upload Test Reports
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: firefox-tests
           path: reports/offBeatTest*
       - name: Download all workflow run artifacts
         if: always()
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
