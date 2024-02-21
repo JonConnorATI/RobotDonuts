@@ -9,7 +9,7 @@ Resource            all_resources.resource
 Get Current DateTime
   ${CurrDate}  Get Current Date
   ${converted}  Convert date  ${CurrDate}  result_format=%d%m%Y%H%M%S
-  [return]     ${converted}
+  RETURN     ${converted}
 
 # Pass element locator as an arguement
 # returns True if the element exists, else False
@@ -17,7 +17,7 @@ Does Element Exist
    [Arguments]  ${Element Locator}
    ${count}  Get element Count  ${Element Locator}
    ${isExists} =  Set variable if  ${count} == 1  ${True}  ${False}
-   [Return]  ${isExists}
+   RETURN  ${isExists}
 
 
 Element Should Exist
@@ -65,13 +65,13 @@ Get the required list of elements as displayed in the table
         ${Required} =  Get Text  ${Element}
         Append To List    ${Displayed_List}  ${Required}
     END
-    [Return]  @{Displayed_List}
+    RETURN  @{Displayed_List}
 
 # Counts the number of rows in a table
 Count the number of table rows
     [Arguments]  ${table_row_locator}
     ${Total_Rows} =  Get Element Count  ${table_row_locator}
-    [Return]  ${Total_Rows}
+    RETURN  ${Total_Rows}
 
 
 
