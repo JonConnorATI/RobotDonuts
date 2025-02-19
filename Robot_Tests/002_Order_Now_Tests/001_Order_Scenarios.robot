@@ -25,7 +25,7 @@ Customer is on a budget and orders lowest value donuts
     Get the total in the Cart
     Verify the total on the Order Now Page is the same as the Cart
 
-Customer is in the bad books at home
+Customer is hungry
     [Documentation]    Verify the donuts ordered are added to the cart
     [Tags]
     Sleep    3s
@@ -43,7 +43,7 @@ Customer is in the bad books at home
     Get the total in the Cart
     Verify the total on the Order Now Page is the same as the Cart
 
-Customer is celebrating a birthday
+Customer wants luxury
     [Documentation]    Verify the donuts ordered are added to the cart
     [Tags]
     Sleep    3s
